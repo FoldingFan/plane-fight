@@ -42,9 +42,11 @@ object HeroFly : GameObj() {
 
     override fun update(nano: Long) {
         if (!KeyPress.right && !KeyPress.left && !KeyPress.up && !KeyPress.down && speed > 0) {
-            speed--
+            speed -= (speed - 0) / 2
+            speed = if (speed <= 5) 0.0 else speed
         } else if (speed < 120) {
-            speed++
+            speed += (120 - speed) / 2
+            speed = if (speed >= 110) 120.0 else speed
         }
     }
 }
