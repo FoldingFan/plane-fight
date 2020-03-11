@@ -2,6 +2,7 @@ package pers.chen.game.entity
 
 import javafx.scene.image.Image
 import pers.chen.game.GameKeyHandler
+import pers.chen.util.getImage
 import java.io.File
 import java.io.FileInputStream
 
@@ -17,7 +18,7 @@ object HeroFly : GameObj() {
         height = 58.0
         centerX = 250.0
         centerY = 250.0
-        image = Image(FileInputStream(File("./images/hero.png")))
+        image = getImage("./images/hero.png")
     }
 
     override fun update(nano: Long) {
