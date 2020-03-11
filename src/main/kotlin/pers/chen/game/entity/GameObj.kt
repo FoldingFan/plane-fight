@@ -1,4 +1,4 @@
-package pers.chen.game.base
+package pers.chen.game.entity
 
 import javafx.scene.image.Image
 import pers.chen.game.GameCoroutines

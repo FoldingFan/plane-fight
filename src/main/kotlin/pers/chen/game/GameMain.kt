@@ -3,7 +3,7 @@ package pers.chen.game
 import javafx.scene.canvas.Canvas
 import javafx.scene.canvas.GraphicsContext
 import javafx.scene.paint.Color
-import pers.chen.game.base.GameObj
+import pers.chen.game.entity.GameObj
 import pers.chen.game.entity.HeroFly
 
 /**
