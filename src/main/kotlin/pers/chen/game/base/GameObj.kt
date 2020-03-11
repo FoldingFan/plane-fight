@@ -11,6 +11,7 @@ import javafx.scene.image.Image
 abstract class GameObj {
     var image: Image? = null
 
+    /*每秒移动距离*/
     var speed: Int = 5
 
     /*宽高，设置宽高会导致中心点变化*/
