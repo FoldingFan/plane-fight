@@ -1,7 +1,8 @@
-package pers.chen.framwork
+package pers.chen.game
 
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import pers.chen.framwork.ViewManager
 
 /**
  * @Author: chen
@@ -28,7 +29,8 @@ object GameCoroutines {
         GlobalScope.launch {
             while (true) {
                 val currNano = System.nanoTime()
-                preNano = preNano ?: currNano
+                preNano = preNano
+                        ?: currNano
                 elapsedNano += currNano - preNano!!
                 if (elapsedNano >= nps) {
                     ViewManager.currView?.onUpdate(elapsedNano)

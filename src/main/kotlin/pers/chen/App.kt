@@ -2,7 +2,7 @@ package pers.chen
 
 import javafx.application.Application
 import javafx.stage.Stage
-import pers.chen.framwork.GameCoroutines
+import pers.chen.game.GameCoroutines
 import pers.chen.framwork.ViewManager
 import pers.chen.view.GameView
 import pers.chen.view.HomeView

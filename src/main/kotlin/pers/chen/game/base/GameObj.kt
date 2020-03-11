@@ -1,7 +1,7 @@
 package pers.chen.game.base
 
 import javafx.scene.image.Image
-import pers.chen.framwork.GameCoroutines
+import pers.chen.game.GameCoroutines
 
 /**
  * @Author: chen
