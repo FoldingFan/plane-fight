@@ -23,6 +23,9 @@ object GameMain {
         gameObjList.add(HeroFly)
     }
 
+    /**
+     * 每帧调用
+     */
     fun run(nano: Long) {
         graphics.fill = Color.web("#000000")
         graphics.fillRect(0.0, 0.0, 500.0, 500.0)
