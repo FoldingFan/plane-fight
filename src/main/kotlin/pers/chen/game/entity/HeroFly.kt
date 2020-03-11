@@ -41,7 +41,6 @@ object HeroFly : GameObj() {
     }
 
     override fun update(nano: Long) {
-        println(speed)
         if (!KeyPress.right && !KeyPress.left && !KeyPress.up && !KeyPress.down && speed > 0) {
             speed--
         } else if (speed < 120) {
