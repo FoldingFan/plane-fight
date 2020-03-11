@@ -1,4 +1,4 @@
-package chen.util
+package pers.chen.util
 
 import java.net.URI
 import java.net.http.HttpClient
@@ -7,7 +7,7 @@ import java.net.http.HttpResponse
 import java.time.Duration
 
 /**
- * @Author: chen
+ * @Author: pers.chen
  * @Date: 2020/3/11 15:24
  * @VERSION 1.0
  *

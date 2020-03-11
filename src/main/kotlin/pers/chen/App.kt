@@ -1,10 +1,10 @@
-package chen
+package pers.chen
 
 import javafx.application.Application
 import javafx.stage.Stage
 
 /**
- * @Author: chen
+ * @Author: pers.chen
  * @Date: 2020/3/11 12:15
  * @VERSION 1.0
  *
