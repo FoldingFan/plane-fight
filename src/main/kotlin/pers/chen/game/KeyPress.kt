@@ -6,7 +6,7 @@ import pers.chen.game.entity.HeroFly
  * @Author: chen
  * @Date: 2020/3/11 23:04
  * @VERSION 1.0
- *
+ * 标识按键状态
  */
 object KeyPress {
     var left = false
