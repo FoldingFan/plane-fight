@@ -10,6 +10,7 @@ import pers.chen.game.GameCoroutines
  * 游戏对象
  */
 abstract class GameObj {
+    /*游戏所用图片*/
     var image: Image? = null
 
     /*每帧移动距离*/
