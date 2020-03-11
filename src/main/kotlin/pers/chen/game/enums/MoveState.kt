@@ -1,4 +1,4 @@
-package pers.chen.game.entity
+package pers.chen.game.enums
 
 /**
  * @Author: chen
