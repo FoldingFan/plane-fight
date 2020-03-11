@@ -1,10 +1,7 @@
 package pers.chen.game.entity
 
-import javafx.scene.image.Image
-import pers.chen.game.GameKeyHandler
+import pers.chen.game.KeyHandler
 import pers.chen.util.getImage
-import java.io.File
-import java.io.FileInputStream
 
 /**
  * @Author: chen
@@ -22,7 +19,7 @@ object HeroFly : GameObj() {
     }
 
     override fun update(nano: Long) {
-        if (GameKeyHandler.left) {
+        if (KeyHandler.left) {
             direct = Math.PI
         }
     }

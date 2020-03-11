@@ -8,7 +8,7 @@ import pers.chen.game.entity.HeroFly
  * @VERSION 1.0
  *
  */
-object GameKeyHandler {
+object KeyHandler {
     var left = false
     var up = false
     var right = false
