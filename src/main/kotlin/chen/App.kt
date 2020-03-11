@@ -1,4 +1,4 @@
-package pers.chen
+package chen
 
 import javafx.application.Application
 import javafx.stage.Stage

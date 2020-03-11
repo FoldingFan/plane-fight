@@ -1,4 +1,4 @@
-package pers.chen.util
+package chen.util
 
 import java.net.URI
 import java.net.http.HttpClient
