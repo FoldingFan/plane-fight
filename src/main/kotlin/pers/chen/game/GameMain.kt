@@ -32,4 +32,20 @@ object GameMain {
             graphics.drawImage(it.image, it.posX, it.posY, it.width, it.height)
         }
     }
+
+    fun left() {
+        HeroFly.centerX = HeroFly.centerX - 1
+    }
+
+    fun up() {
+        HeroFly.centerY = HeroFly.centerY - 1
+    }
+
+    fun right() {
+        HeroFly.centerX = HeroFly.centerX + 1
+    }
+
+    fun down() {
+        HeroFly.centerY = HeroFly.centerY + 1
+    }
 }

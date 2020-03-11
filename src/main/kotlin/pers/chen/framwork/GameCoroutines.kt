@@ -23,7 +23,7 @@ object GameCoroutines {
         fps = 60
     }
 
-    /*开始游戏*/
+    /*游戏线程开始*/
     fun play() {
         GlobalScope.launch {
             while (true) {
