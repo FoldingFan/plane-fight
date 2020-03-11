@@ -3,6 +3,7 @@ package pers.chen.game.entity
 import javafx.scene.canvas.GraphicsContext
 import javafx.scene.input.KeyCode
 import javafx.scene.input.KeyEvent
+import pers.chen.game.KeyPress
 import pers.chen.util.getImage
 
 /**
@@ -24,8 +25,15 @@ object HeroFly : GameObj() {
     /**
      * 按键更新，当方向键变更时触发
      */
-    fun directUpdate() {
-
+    fun updateDirect() {
+        if (KeyPress.up) direct = 0.0
+        if (KeyPress.down) direct = Math.PI
+        if (KeyPress.left) direct = Math.PI / 2 + Math.PI
+        if (KeyPress.right) direct = Math.PI / 2
+        if (KeyPress.up && KeyPress.left) direct = Math.PI * 2 - Math.PI / 4
+        if (KeyPress.up && KeyPress.right) direct = Math.PI / 4
+        if (KeyPress.down && KeyPress.left) direct = Math.PI + Math.PI / 4
+        if (KeyPress.down && KeyPress.right) direct = Math.PI - Math.PI / 4
     }
 
     override fun draw(graphics: GraphicsContext) {

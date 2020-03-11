@@ -14,27 +14,27 @@ object KeyPress {
             if (field == value) return
             field = value
             if (right) right = !right
-            HeroFly.directUpdate()
+            HeroFly.updateDirect()
         }
     var right = false
         set(value) {
             if (field == value) return
             field = value
             if (left) left = !left
-            HeroFly.directUpdate()
+            HeroFly.updateDirect()
         }
     var up = false
         set(value) {
             if (field == value) return
             field = value
             if (down) down = !down
-            HeroFly.directUpdate()
+            HeroFly.updateDirect()
         }
     var down = false
         set(value) {
             if (field == value) return
             field = value
             if (up) up = !up
-            HeroFly.directUpdate()
+            HeroFly.updateDirect()
         }
 }
