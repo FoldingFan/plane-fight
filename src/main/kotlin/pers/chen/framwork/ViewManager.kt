@@ -2,7 +2,7 @@ package pers.chen.framwork
 
 import javafx.scene.Scene
 import javafx.scene.layout.Pane
-import pers.chen.base.BaseView
+import pers.chen.view.BaseView
 
 /**
  * @Author: chen

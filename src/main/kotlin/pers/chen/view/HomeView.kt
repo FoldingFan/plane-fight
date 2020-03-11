@@ -4,7 +4,6 @@ import javafx.application.Platform
 import javafx.geometry.Pos
 import javafx.scene.control.Button
 import javafx.scene.layout.VBox
-import pers.chen.base.BaseView
 import pers.chen.framwork.ViewManager
 
 /**

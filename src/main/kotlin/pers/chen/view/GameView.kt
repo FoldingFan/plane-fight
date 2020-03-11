@@ -2,7 +2,6 @@ package pers.chen.view
 
 import javafx.scene.input.KeyCode
 import javafx.scene.input.KeyEvent
-import pers.chen.base.BaseView
 import pers.chen.game.GameKeyHandler
 import pers.chen.game.GameMain
 

@@ -1,4 +1,4 @@
-package pers.chen.base
+package pers.chen.view
 
 import javafx.scene.input.KeyEvent
 import javafx.scene.layout.Pane
