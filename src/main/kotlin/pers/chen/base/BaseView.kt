@@ -1,5 +1,6 @@
 package pers.chen.base
 
+import javafx.scene.input.KeyEvent
 import javafx.scene.layout.Pane
 import javafx.scene.layout.StackPane
 
@@ -12,6 +13,8 @@ import javafx.scene.layout.StackPane
 abstract class BaseView {
     val pane: Pane = StackPane()
 
+
+    open fun onKeyPress(it: KeyEvent) {}
 
     /**
      * 进入时调用

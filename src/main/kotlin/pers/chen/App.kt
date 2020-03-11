@@ -2,7 +2,8 @@ package pers.chen
 
 import javafx.application.Application
 import javafx.stage.Stage
-import pers.chen.framwork.*
+import pers.chen.framwork.GameCoroutines
+import pers.chen.framwork.ViewManager
 import pers.chen.view.GameView
 import pers.chen.view.HomeView
 
@@ -14,19 +15,20 @@ import pers.chen.view.HomeView
  */
 class App : Application() {
     override fun init() {
-        regView("home", HomeView)
-        regView("game", GameView)
-        goView("home")
+        ViewManager.regView("home", HomeView)
+        ViewManager.regView("game", GameView)
+        ViewManager.goView("home")
         GameCoroutines.play()
+        ViewManager.viewRoot.setOnKeyPressed { ViewManager.currView?.onKeyPress(it) }
     }
 
     override fun start(stage: Stage) {
-        stage.scene = viewRoot
+        stage.scene = ViewManager.viewRoot
         stage.show()
     }
 
     override fun stop() {
-        viewMap.forEach { (_, view) -> view.onStop() }
+        ViewManager.viewMap.forEach { (_, view) -> view.onStop() }
     }
 }
 

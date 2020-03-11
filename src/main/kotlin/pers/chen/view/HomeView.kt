@@ -5,7 +5,7 @@ import javafx.geometry.Pos
 import javafx.scene.control.Button
 import javafx.scene.layout.VBox
 import pers.chen.base.BaseView
-import pers.chen.framwork.goView
+import pers.chen.framwork.ViewManager
 
 /**
  * @Author: chen
@@ -19,7 +19,7 @@ object HomeView : BaseView() {
     private val vBox = VBox(20.0, playBtn, exitBtn)
 
     init {
-        playBtn.setOnAction { goView("game") }
+        playBtn.setOnAction { ViewManager.goView("game") }
         exitBtn.setOnAction { Platform.exit() }
         vBox.alignment = Pos.CENTER
         pane.children.add(vBox)

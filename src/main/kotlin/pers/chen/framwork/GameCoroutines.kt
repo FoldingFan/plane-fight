@@ -31,7 +31,7 @@ object GameCoroutines {
                 preNano = preNano ?: currNano
                 elapsedNano += currNano - preNano!!
                 if (elapsedNano >= nps) {
-                    currView?.onUpdate(elapsedNano)
+                    ViewManager.currView?.onUpdate(elapsedNano)
                     elapsedNano -= nps
                 }
                 preNano = currNano
