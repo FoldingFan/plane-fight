@@ -59,6 +59,7 @@
 
     <build>
         <finalName>plane-fight</finalName>
+        <sourceDirectory>./src/main/kotlin</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
