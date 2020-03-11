@@ -14,7 +14,11 @@ abstract class BaseView {
     val pane: Pane = StackPane()
 
 
+    /**
+     * 监听按键
+     */
     open fun onKeyPress(it: KeyEvent) {}
+    open fun onKeyRelease(it: KeyEvent) {}
 
     /**
      * 进入时调用
@@ -35,5 +39,4 @@ abstract class BaseView {
      * 退出平台时调用
      */
     open fun onStop() {}
-    open fun onKeyRelease(it: KeyEvent?) {}
 }

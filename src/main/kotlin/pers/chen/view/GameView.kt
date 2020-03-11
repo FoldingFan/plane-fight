@@ -17,14 +17,21 @@ object GameView : BaseView() {
         pane.children.add(GameMain.canvas)
     }
 
-    override fun onKeyPress(it: KeyEvent) {
-        when (it.code) {
-            KeyCode.A -> GameLogic.left()
-            KeyCode.D -> GameLogic.right()
-            KeyCode.W -> GameLogic.up()
-            KeyCode.S -> GameLogic.down()
-            else -> {
-            }
+    override fun onKeyPress(it: KeyEvent) = when (it.code) {
+        KeyCode.A -> GameLogic.left()
+        KeyCode.D -> GameLogic.right()
+        KeyCode.W -> GameLogic.up()
+        KeyCode.S -> GameLogic.down()
+        else -> {
+        }
+    }
+
+    override fun onKeyRelease(it: KeyEvent) = when (it.code) {
+        KeyCode.A -> GameLogic.left()
+        KeyCode.D -> GameLogic.right()
+        KeyCode.W -> GameLogic.up()
+        KeyCode.S -> GameLogic.down()
+        else -> {
         }
     }
 
