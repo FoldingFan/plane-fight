@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>javaFX</artifactId>
+    <groupId>pers.chen</groupId>
+    <artifactId>plane-fight</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>javaFX</name>
+    <name>plane-fight</name>
     <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
+    <url>https://github.com/FoldingFan/plane-fight</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,7 +38,6 @@
         </dependency>
 
 
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -59,7 +58,7 @@
     </dependencies>
 
     <build>
-        <finalName>javaFX</finalName>
+        <finalName>plane-fight</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
