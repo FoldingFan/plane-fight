@@ -10,6 +10,16 @@ import javafx.scene.layout.StackPane
  *
  */
 abstract class BaseView {
-    private val pane: Pane = StackPane()
-    abstract fun onEnter()
+    val pane: Pane = StackPane()
+
+
+    /**
+     * 进入时调用
+     */
+    open fun onEnter() {}
+
+    /**
+     * 离开时调用
+     */
+    open fun onLeave() {}
 }
