@@ -1,6 +1,7 @@
 package pers.chen.game.base
 
 import javafx.scene.image.Image
+import pers.chen.framwork.GameCoroutines
 
 /**
  * @Author: chen
@@ -11,8 +12,11 @@ import javafx.scene.image.Image
 abstract class GameObj {
     var image: Image? = null
 
-    /*每秒移动距离*/
-    var speed: Int = 5
+    /*每帧移动距离*/
+    var speed: Double = 0.0
+        set(value) {
+            field = value / GameCoroutines.fps
+        }
 
     /*宽高，设置宽高会导致中心点变化*/
     var width: Double = 0.0

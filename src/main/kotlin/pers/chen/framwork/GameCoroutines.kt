@@ -12,12 +12,12 @@ import kotlinx.coroutines.launch
 object GameCoroutines {
     private var elapsedNano: Long = 0
     private var preNano: Long? = null
-    private var fps: Long = 0
+    var fps: Long = 0
         set(value) {
             field = value
             nps = (1E9 / field).toLong()
         }
-    private var nps: Long = 0
+    var nps: Long = 0
 
     init {
         fps = 60
