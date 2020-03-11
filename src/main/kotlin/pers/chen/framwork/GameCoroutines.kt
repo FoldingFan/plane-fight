@@ -7,7 +7,7 @@ import kotlinx.coroutines.launch
  * @Author: chen
  * @Date: 2020/3/11 19:21
  * @VERSION 1.0
- *
+ *  游戏主线程
  */
 object GameCoroutines {
     private var elapsedNano: Long = 0
