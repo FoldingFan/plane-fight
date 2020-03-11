@@ -47,7 +47,7 @@ object HeroFly : GameObj() {
             speed = if (speed < 10.0) 0.0 else speed
         } else if (speed < 120) {
             speed += (120 - speed) / 5
-            speed = if (speed >= 110) 120.0 else speed
+            speed = if (speed >= 110.0) 120.0 else speed
         }
     }
 }
