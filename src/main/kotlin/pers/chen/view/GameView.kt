@@ -2,8 +2,8 @@ package pers.chen.view
 
 import javafx.scene.input.KeyCode
 import javafx.scene.input.KeyEvent
-import pers.chen.game.KeyRecord
 import pers.chen.game.GameMain
+import pers.chen.game.entity.HeroFly
 
 /**
  * @Author: chen
@@ -16,24 +16,12 @@ object GameView : BaseView() {
         pane.children.add(GameMain.canvas)
     }
 
-    override fun onKeyPress(it: KeyEvent) = when (it.code) {
-        KeyCode.A -> KeyRecord.left = true
-        KeyCode.D -> KeyRecord.right = true
-        KeyCode.W -> KeyRecord.up = true
-        KeyCode.S -> KeyRecord.down = true
-        else -> {
-            println("点击一次")
-        }
+    override fun onKeyPress(it: KeyEvent) {
+        HeroFly.keyPress(it)
     }
 
-    override fun onKeyRelease(it: KeyEvent) = when (it.code) {
-        KeyCode.A -> KeyRecord.left = false
-        KeyCode.D -> KeyRecord.right = false
-        KeyCode.W -> KeyRecord.up = false
-        KeyCode.S -> KeyRecord.down = false
-        else -> {
-            println("点击释放")
-        }
+    override fun onKeyRelease(it: KeyEvent) {
+        HeroFly.keyRelease(it)
     }
 
     override fun onUpdate(nanos: Long) {

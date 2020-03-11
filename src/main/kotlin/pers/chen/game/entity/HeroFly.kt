@@ -1,8 +1,8 @@
 package pers.chen.game.entity
 
 import javafx.scene.canvas.GraphicsContext
-import pers.chen.game.GameMain
-import pers.chen.game.KeyRecord
+import javafx.scene.input.KeyCode
+import javafx.scene.input.KeyEvent
 import pers.chen.util.getImage
 
 /**
@@ -17,7 +17,7 @@ object HeroFly : GameObj() {
         height = 58.0
         centerX = 250.0
         centerY = 250.0
-        speed = 10.0
+        speed = 60.0
         image = getImage("./images/hero.png")
     }
 
@@ -26,11 +26,26 @@ object HeroFly : GameObj() {
     }
 
     override fun update(nano: Long) {
-        if (KeyRecord.left) {
-            direct = Math.PI + Math.PI / 2
+
+    }
+
+    fun keyPress(keyEvent: KeyEvent) {
+        when (keyEvent.code) {
+            KeyCode.A -> direct += Math.PI + Math.PI / 2
+            KeyCode.S -> direct += Math.PI
+            KeyCode.D -> direct += Math.PI / 2
+            else -> {
+            }
         }
-        if (KeyRecord.right) {
-            direct = Math.PI / 2
+    }
+
+    fun keyRelease(keyEvent: KeyEvent) {
+        when (keyEvent.code) {
+            KeyCode.A -> direct -= Math.PI + Math.PI / 2
+            KeyCode.S -> direct -= Math.PI
+            KeyCode.D -> direct -= Math.PI / 2
+            else -> {
+            }
         }
     }
 }
