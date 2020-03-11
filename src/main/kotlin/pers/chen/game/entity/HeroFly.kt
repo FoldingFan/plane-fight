@@ -4,6 +4,7 @@ import javafx.scene.canvas.GraphicsContext
 import javafx.scene.input.KeyCode
 import javafx.scene.input.KeyEvent
 import pers.chen.game.KeyPress
+import pers.chen.game.enums.MoveState
 import pers.chen.util.getImage
 
 /**
@@ -26,6 +27,7 @@ object HeroFly : GameObj() {
      * 按键更新，当方向键变更时触发
      */
     fun updateDirect() {
+        moveState = MoveState.MOVE
         if (KeyPress.up) direct = 0.0
         if (KeyPress.down) direct = Math.PI
         if (KeyPress.left) direct = Math.PI / 2 + Math.PI
@@ -34,6 +36,7 @@ object HeroFly : GameObj() {
         if (KeyPress.up && KeyPress.right) direct = Math.PI / 4
         if (KeyPress.down && KeyPress.left) direct = Math.PI + Math.PI / 4
         if (KeyPress.down && KeyPress.right) direct = Math.PI - Math.PI / 4
+        if (!KeyPress.right && !KeyPress.left && !KeyPress.up && !KeyPress.down) moveState = MoveState.STOP
     }
 
     override fun draw(graphics: GraphicsContext) {
