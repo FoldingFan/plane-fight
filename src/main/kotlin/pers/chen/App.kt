@@ -1,11 +1,12 @@
 package pers.chen
 
 import javafx.application.Application
-import javafx.scene.media.Media
-import javafx.scene.media.MediaPlayer
 import javafx.stage.Stage
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import pers.chen.audio.Boom
-import java.io.File
+import pers.chen.audio.Fire
 
 /**
  * @Author: pers.chen
@@ -15,8 +16,11 @@ import java.io.File
  */
 class App : Application() {
     override fun start(stage: Stage) {
-        Boom.play()
-
+        GlobalScope.launch {
+            Boom.play()
+            delay(1000)
+            Fire.play()
+        }
         stage.show()
     }
 }
