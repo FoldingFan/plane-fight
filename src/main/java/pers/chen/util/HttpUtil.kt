@@ -1,4 +1,4 @@
-package org.example.util
+package pers.chen.util
 
 import java.net.URI
 import java.net.http.HttpClient
