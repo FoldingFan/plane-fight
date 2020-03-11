@@ -19,7 +19,17 @@ abstract class BaseView {
     open fun onEnter() {}
 
     /**
+     * 视图更新
+     */
+    open fun onUpdate(nanos: Long) {}
+
+    /**
      * 离开时调用
      */
     open fun onLeave() {}
+
+    /**
+     * 退出平台时调用
+     */
+    open fun onStop() {}
 }

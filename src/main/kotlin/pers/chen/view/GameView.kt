@@ -1,6 +1,7 @@
 package pers.chen.view
 
 import pers.chen.base.BaseView
+import pers.chen.framwork.GameCoroutines
 
 /**
  * @Author: chen
@@ -9,8 +10,13 @@ import pers.chen.base.BaseView
  *
  */
 object GameView : BaseView() {
-    override fun onEnter() {
-        println("开始")
+
+    private var s = 0
+    override fun onUpdate(nanos: Long) {
+        if (++s >= 60) {
+            s = 0
+            println("60次执行")
+        }
     }
 
 }

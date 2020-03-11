@@ -2,9 +2,7 @@ package pers.chen
 
 import javafx.application.Application
 import javafx.stage.Stage
-import pers.chen.framwork.goView
-import pers.chen.framwork.regView
-import pers.chen.framwork.viewRoot
+import pers.chen.framwork.*
 import pers.chen.view.GameView
 import pers.chen.view.HomeView
 
@@ -19,6 +17,7 @@ class App : Application() {
         regView("home", HomeView)
         regView("game", GameView)
         goView("home")
+        GameCoroutines.play()
     }
 
     override fun start(stage: Stage) {
@@ -27,7 +26,8 @@ class App : Application() {
     }
 
     override fun stop() {
-        println("退出平台")
+        viewMap.forEach { (_, view) -> view.onStop() }
+        GameCoroutines.stop()
     }
 }
 

@@ -10,6 +10,7 @@ import pers.chen.base.BaseView
  * @VERSION 1.0
  *
  */
+
 /*根节点*/
 val viewRoot = Scene(Pane(), 500.0, 500.0)
 
@@ -17,7 +18,7 @@ val viewRoot = Scene(Pane(), 500.0, 500.0)
 var currView: BaseView? = null
 
 /*存放已注册的视图*/
-private val viewMap = HashMap<String, BaseView>()
+val viewMap = HashMap<String, BaseView>()
 
 /**
  * 注册一个页面
@@ -40,6 +41,7 @@ fun goView(name: String) {
     if (currView == viewMap[name] || viewMap[name] == null) return
     currView?.onLeave()
     viewMap[name]?.onEnter()
+    currView = viewMap[name]
     viewRoot.root = viewMap[name]?.pane
 }
 
