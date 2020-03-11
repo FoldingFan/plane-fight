@@ -5,7 +5,6 @@ import javafx.scene.input.KeyEvent
 import pers.chen.base.BaseView
 import pers.chen.game.GameLogic
 import pers.chen.game.GameMain
-import pers.chen.game.canvas
 
 /**
  * @Author: chen
