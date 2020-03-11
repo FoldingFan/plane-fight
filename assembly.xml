@@ -12,4 +12,12 @@
             <unpack>true</unpack>
         </dependencySet>
     </dependencySets>
+
+    <fileSets>
+        <fileSet>
+            <excludes>
+                <exclude>music</exclude>
+            </excludes>
+        </fileSet>
+    </fileSets>
 </assembly>

@@ -1,7 +1,11 @@
 package pers.chen
 
 import javafx.application.Application
+import javafx.scene.media.Media
+import javafx.scene.media.MediaPlayer
 import javafx.stage.Stage
+import pers.chen.audio.Boom
+import java.io.File
 
 /**
  * @Author: pers.chen
@@ -11,6 +15,8 @@ import javafx.stage.Stage
  */
 class App : Application() {
     override fun start(stage: Stage) {
+        Boom.play()
+
         stage.show()
     }
 }
