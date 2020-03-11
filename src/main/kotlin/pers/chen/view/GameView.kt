@@ -22,7 +22,6 @@ object GameView : BaseView() {
         KeyCode.W -> KeyPress.up = true
         KeyCode.S -> KeyPress.down = true
         else -> {
-            println("点击一次")
         }
     }
 
@@ -32,7 +31,6 @@ object GameView : BaseView() {
         KeyCode.W -> KeyPress.up = false
         KeyCode.S -> KeyPress.down = false
         else -> {
-            println("点击释放")
         }
     }
 
