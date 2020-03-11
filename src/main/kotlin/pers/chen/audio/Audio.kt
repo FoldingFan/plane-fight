@@ -9,21 +9,23 @@ import java.io.File
  * @VERSION 1.0
  *
  */
-private val baseAudio = File("./audio/").toURI().toString()
-private val boom = "${baseAudio}boom.mp3"
-private val fire = "${baseAudio}fire.mp3"
+private val boom = File("./audio/boom.mp3")
+private val fire = File("./audio/fire.mp3")
 
-sealed class Audio(private val path: String) {
-    private val audioClip: AudioClip = AudioClip(path)
+sealed class Audio(private val audioFile: File) {
+    private var audioClip: AudioClip? = null
+
+    init {
+        /*检查音乐是否存在*/
+        if (audioFile.exists()) {
+            audioClip = AudioClip(audioFile.toURI().toString())
+        }
+    }
+
     fun play() {
-        audioClip.play()
+        audioClip?.play()
     }
 }
 
 object BoomAudio : Audio(boom)
 object FireAudio : Audio(fire)
-
-fun main() {
-    BoomAudio.play()
-    Thread.sleep(5000)
-}
