@@ -19,4 +19,8 @@ object HeroFly : GameObj() {
         centerY = 250.0
         image = Image(FileInputStream(File("./images/hero.png")))
     }
+
+    override fun update() {
+
+    }
 }
