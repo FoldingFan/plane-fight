@@ -5,6 +5,6 @@
 jlink --module-path jmods --add-modules java.base,jdk.unsupported,java.net.http --output runtime
 ```
 
-# 打包  
+# 打包可运行exe  
 
 > maven package之后，通过exe4j进行打包
