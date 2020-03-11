@@ -20,6 +20,7 @@ class App : Application() {
         ViewManager.goView("home")
         GameCoroutines.play()
         ViewManager.viewRoot.setOnKeyPressed { ViewManager.currView?.onKeyPress(it) }
+        ViewManager.viewRoot.setOnKeyReleased { ViewManager.currView?.onKeyRelease(it) }
     }
 
     override fun start(stage: Stage) {

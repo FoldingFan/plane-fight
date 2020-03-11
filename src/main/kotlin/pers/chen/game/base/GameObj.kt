@@ -54,12 +54,12 @@ abstract class GameObj {
             if (posY != value - height / 2) posY = value - height / 2
         }
 
-    /*旋转角度*/
-    var rota: Double = 0.0
+    /*方向*/
+    var direct: Double = 0.0
         set(value) {
             field = value % Math.PI
         }
 
 
-    abstract fun update()
+    abstract fun update(nano: Long)
 }

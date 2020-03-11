@@ -35,4 +35,5 @@ abstract class BaseView {
      * 退出平台时调用
      */
     open fun onStop() {}
+    open fun onKeyRelease(it: KeyEvent?) {}
 }
