@@ -16,7 +16,7 @@ object GameMain {
     private val gameObjList = HashSet<GameObj>()
 
     /*游戏画板*/
-    private val canvas = Canvas(500.0, 500.0)
+    val canvas = Canvas(500.0, 500.0)
     private val graphics: GraphicsContext = canvas.graphicsContext2D
 
     init {
