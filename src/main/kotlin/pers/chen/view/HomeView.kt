@@ -24,12 +24,4 @@ object HomeView : BaseView() {
         vBox.alignment = Pos.CENTER
         pane.children.add(vBox)
     }
-
-    override fun onEnter() {
-        println("进入首页")
-    }
-
-    override fun onLeave() {
-        println("离开首页")
-    }
 }

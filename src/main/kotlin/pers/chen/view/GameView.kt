@@ -1,6 +1,8 @@
 package pers.chen.view
 
 import pers.chen.base.BaseView
+import pers.chen.game.GameMain
+import pers.chen.game.canvas
 
 /**
  * @Author: chen
@@ -9,13 +11,12 @@ import pers.chen.base.BaseView
  *
  */
 object GameView : BaseView() {
+    init {
+        pane.children.add(canvas)
+    }
 
-    private var s = 0
     override fun onUpdate(nanos: Long) {
-        if (++s >= 60) {
-            s = 0
-            println("60次执行")
-        }
+        GameMain.run(nanos)
     }
 
 }
