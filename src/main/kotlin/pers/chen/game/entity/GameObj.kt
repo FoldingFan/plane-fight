@@ -1,7 +1,9 @@
 package pers.chen.game.entity
 
+import javafx.scene.canvas.GraphicsContext
 import javafx.scene.image.Image
 import pers.chen.game.GameCoroutines
+import pers.chen.game.enums.MoveState
 
 /**
  * @Author: chen
@@ -58,9 +60,17 @@ abstract class GameObj {
     /*方向*/
     var direct: Double = 0.0
         set(value) {
-            field = value % Math.PI
+            field = value % (Math.PI * 2)
         }
 
+    /*状态*/
+    var moveState = MoveState.MOVE
+    fun move() {
+        if (moveState == MoveState.STOP) return
+        centerX += Math.sin(direct) * speed
+        centerY -= Math.cos(direct) * speed
+    }
 
+    abstract fun draw(g: GraphicsContext)
     abstract fun update(nano: Long)
 }

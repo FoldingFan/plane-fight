@@ -1,5 +1,7 @@
 package pers.chen.game.entity
 
+import javafx.scene.canvas.GraphicsContext
+import pers.chen.game.GameMain
 import pers.chen.game.KeyRecord
 import pers.chen.util.getImage
 
@@ -15,12 +17,20 @@ object HeroFly : GameObj() {
         height = 58.0
         centerX = 250.0
         centerY = 250.0
+        speed = 10.0
         image = getImage("./images/hero.png")
+    }
+
+    override fun draw(graphics: GraphicsContext) {
+        graphics.drawImage(image, posX, posY, width, height)
     }
 
     override fun update(nano: Long) {
         if (KeyRecord.left) {
-            direct = Math.PI
+            direct = Math.PI + Math.PI / 2
+        }
+        if (KeyRecord.right) {
+            direct = Math.PI / 2
         }
     }
 }

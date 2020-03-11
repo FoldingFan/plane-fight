@@ -30,8 +30,9 @@ object GameMain {
         graphics.fill = Color.web("#000000")
         graphics.fillRect(0.0, 0.0, 500.0, 500.0)
         gameObjList.forEach {
-            graphics.drawImage(it.image, it.posX, it.posY, it.width, it.height)
             it.update(nano)
+            it.move()
+            it.draw(graphics)
         }
     }
 
