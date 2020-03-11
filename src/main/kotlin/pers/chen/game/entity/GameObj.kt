@@ -4,6 +4,8 @@ import javafx.scene.canvas.GraphicsContext
 import javafx.scene.image.Image
 import pers.chen.game.GameCoroutines
 import pers.chen.game.enums.MoveState
+import kotlin.math.cos
+import kotlin.math.sin
 
 /**
  * @Author: chen
@@ -64,11 +66,9 @@ abstract class GameObj {
         }
 
     /*状态*/
-    var moveState = MoveState.MOVE
     fun move() {
-        if (moveState == MoveState.STOP) return
-        centerX += Math.sin(direct) * speed
-        centerY -= Math.cos(direct) * speed
+        centerX += sin(direct) * speed
+        centerY -= cos(direct) * speed
     }
 
     abstract fun draw(g: GraphicsContext)
