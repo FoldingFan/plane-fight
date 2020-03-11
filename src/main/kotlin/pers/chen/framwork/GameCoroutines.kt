@@ -23,6 +23,7 @@ object GameCoroutines {
         fps = 60
     }
 
+    /*开始游戏*/
     fun play() {
         GlobalScope.launch {
             while (true) {
@@ -36,8 +37,5 @@ object GameCoroutines {
                 preNano = currNano
             }
         }
-    }
-
-    fun stop() {
     }
 }

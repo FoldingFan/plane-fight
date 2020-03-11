@@ -27,7 +27,6 @@ class App : Application() {
 
     override fun stop() {
         viewMap.forEach { (_, view) -> view.onStop() }
-        GameCoroutines.stop()
     }
 }
 
