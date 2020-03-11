@@ -1,7 +1,6 @@
 package pers.chen.view
 
 import pers.chen.base.BaseView
-import pers.chen.framwork.GameCoroutines
 
 /**
  * @Author: chen
