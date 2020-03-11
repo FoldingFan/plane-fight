@@ -5,8 +5,8 @@ import javafx.stage.Stage
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import pers.chen.audio.Boom
-import pers.chen.audio.Fire
+import pers.chen.audio.BoomAudio
+import pers.chen.audio.FireAudio
 
 /**
  * @Author: pers.chen
@@ -17,9 +17,9 @@ import pers.chen.audio.Fire
 class App : Application() {
     override fun start(stage: Stage) {
         GlobalScope.launch {
-            Boom.play()
+            BoomAudio.play()
             delay(1000)
-            Fire.play()
+            BoomAudio.play()
         }
         stage.show()
     }

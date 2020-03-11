@@ -1,8 +1,6 @@
 package pers.chen.audio
 
 import javafx.scene.media.AudioClip
-import javafx.scene.media.Media
-import javafx.scene.media.MediaPlayer
 import java.io.File
 
 /**
@@ -13,14 +11,19 @@ import java.io.File
  */
 private val baseAudio = File("./audio/").toURI().toString()
 private val boom = "${baseAudio}boom.mp3"
+private val fire = "${baseAudio}fire.mp3"
 
 sealed class Audio(private val path: String) {
-
+    private val audioClip: AudioClip = AudioClip(path)
     fun play() {
-        AudioClip(boom).play()
+        audioClip.play()
     }
 }
 
-object Boom : Audio(boom)
-object Fire : Audio(boom)
+object BoomAudio : Audio(boom)
+object FireAudio : Audio(fire)
 
+fun main() {
+    BoomAudio.play()
+    Thread.sleep(5000)
+}
