@@ -76,7 +76,7 @@
                             </descriptors>
                             <archive>
                                 <manifest>
-                                    <mainClass>org.example.AppKt</mainClass> <!-- 你的主类名 -->
+                                    <mainClass>pers.chen.AppKt</mainClass> <!-- 你的主类名 -->
                                 </manifest>
                             </archive>
                         </configuration>
