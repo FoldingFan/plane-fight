@@ -19,7 +19,6 @@ object HeroFly : GameObj() {
         height = 58.0
         centerX = 250.0
         centerY = 250.0
-        speed = 66.0
         image = getImage("./images/hero.png")
     }
 
@@ -42,8 +41,11 @@ object HeroFly : GameObj() {
     }
 
     override fun update(nano: Long) {
+        println(speed)
         if (!KeyPress.right && !KeyPress.left && !KeyPress.up && !KeyPress.down && speed > 0) {
             speed--
+        } else if (speed < 80) {
+            speed++
         }
     }
 }

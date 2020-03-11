@@ -3,7 +3,6 @@ package pers.chen.game.entity
 import javafx.scene.canvas.GraphicsContext
 import javafx.scene.image.Image
 import pers.chen.game.GameCoroutines
-import pers.chen.game.enums.MoveState
 import kotlin.math.cos
 import kotlin.math.sin
 
@@ -17,11 +16,15 @@ abstract class GameObj {
     /*游戏所用图片*/
     var image: Image? = null
 
-    /*每帧移动距离*/
+    /*每秒移动距离*/
     var speed: Double = 0.0
         set(value) {
-            field = value / GameCoroutines.fps
+            field = value
+            speedFrame = value / GameCoroutines.fps
         }
+
+    /*每帧移动距离*/
+    private var speedFrame = 0.0
 
     /*宽高，设置宽高会导致中心点变化*/
     var width: Double = 0.0
@@ -67,8 +70,9 @@ abstract class GameObj {
 
     /*状态*/
     fun move() {
-        centerX += sin(direct) * speed
-        centerY -= cos(direct) * speed
+        centerX += sin(direct) * speedFrame
+        centerY -= cos(direct) * speedFrame
+
     }
 
     abstract fun draw(g: GraphicsContext)
