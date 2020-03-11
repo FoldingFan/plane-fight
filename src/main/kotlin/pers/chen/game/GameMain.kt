@@ -12,14 +12,12 @@ import pers.chen.game.entity.HeroFly
  * @VERSION 1.0
  *
  */
-
-private val gameObjList = HashSet<GameObj>()
-
-/*游戏画板*/
-val canvas = Canvas(500.0, 500.0)
-val graphics: GraphicsContext = canvas.graphicsContext2D
-
 object GameMain {
+    private val gameObjList = HashSet<GameObj>()
+
+    /*游戏画板*/
+    private val canvas = Canvas(500.0, 500.0)
+    private val graphics: GraphicsContext = canvas.graphicsContext2D
 
     init {
         gameObjList.add(HeroFly)
@@ -33,19 +31,5 @@ object GameMain {
         }
     }
 
-    fun left() {
-        HeroFly.centerX = HeroFly.centerX - 1
-    }
 
-    fun up() {
-        HeroFly.centerY = HeroFly.centerY - 1
-    }
-
-    fun right() {
-        HeroFly.centerX = HeroFly.centerX + 1
-    }
-
-    fun down() {
-        HeroFly.centerY = HeroFly.centerY + 1
-    }
 }

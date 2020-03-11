@@ -53,4 +53,6 @@ abstract class GameObj {
             field = value % Math.PI
         }
 
+
+    abstract fun update()
 }
