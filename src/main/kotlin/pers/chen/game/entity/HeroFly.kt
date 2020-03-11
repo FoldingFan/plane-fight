@@ -44,7 +44,7 @@ object HeroFly : GameObj() {
         println(speed)
         if (!KeyPress.right && !KeyPress.left && !KeyPress.up && !KeyPress.down && speed > 0) {
             speed--
-        } else if (speed < 80) {
+        } else if (speed < 120) {
             speed++
         }
     }
