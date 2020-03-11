@@ -17,8 +17,15 @@ object HeroFly : GameObj() {
         height = 58.0
         centerX = 250.0
         centerY = 250.0
-        speed = 60.0
+        speed = 66.0
         image = getImage("./images/hero.png")
+    }
+
+    /**
+     * 按键更新，当方向键变更时触发
+     */
+    fun directUpdate() {
+
     }
 
     override fun draw(graphics: GraphicsContext) {
@@ -27,25 +34,5 @@ object HeroFly : GameObj() {
 
     override fun update(nano: Long) {
 
-    }
-
-    fun keyPress(keyEvent: KeyEvent) {
-        when (keyEvent.code) {
-            KeyCode.A -> direct += Math.PI + Math.PI / 2
-            KeyCode.S -> direct += Math.PI
-            KeyCode.D -> direct += Math.PI / 2
-            else -> {
-            }
-        }
-    }
-
-    fun keyRelease(keyEvent: KeyEvent) {
-        when (keyEvent.code) {
-            KeyCode.A -> direct -= Math.PI + Math.PI / 2
-            KeyCode.S -> direct -= Math.PI
-            KeyCode.D -> direct -= Math.PI / 2
-            else -> {
-            }
-        }
     }
 }
