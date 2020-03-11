@@ -20,7 +20,7 @@ abstract class GameObj {
     var speed: Double = 0.0
         set(value) {
             field = value
-            speedFrame = value / GameCoroutines.fps
+            speedFrame = if (value != 0.0) value / GameCoroutines.fps else 0.0
         }
 
     /*每帧移动距离*/
