@@ -2,7 +2,7 @@ package pers.chen.view
 
 import javafx.scene.input.KeyCode
 import javafx.scene.input.KeyEvent
-import pers.chen.game.KeyHandler
+import pers.chen.game.KeyRecord
 import pers.chen.game.GameMain
 
 /**
@@ -17,20 +17,20 @@ object GameView : BaseView() {
     }
 
     override fun onKeyPress(it: KeyEvent) = when (it.code) {
-        KeyCode.A -> KeyHandler.left = true
-        KeyCode.D -> KeyHandler.right = true
-        KeyCode.W -> KeyHandler.up = true
-        KeyCode.S -> KeyHandler.down = true
+        KeyCode.A -> KeyRecord.left = true
+        KeyCode.D -> KeyRecord.right = true
+        KeyCode.W -> KeyRecord.up = true
+        KeyCode.S -> KeyRecord.down = true
         else -> {
             println("点击一次")
         }
     }
 
     override fun onKeyRelease(it: KeyEvent) = when (it.code) {
-        KeyCode.A -> KeyHandler.left = false
-        KeyCode.D -> KeyHandler.right = false
-        KeyCode.W -> KeyHandler.up = false
-        KeyCode.S -> KeyHandler.down = false
+        KeyCode.A -> KeyRecord.left = false
+        KeyCode.D -> KeyRecord.right = false
+        KeyCode.W -> KeyRecord.up = false
+        KeyCode.S -> KeyRecord.down = false
         else -> {
             println("点击释放")
         }

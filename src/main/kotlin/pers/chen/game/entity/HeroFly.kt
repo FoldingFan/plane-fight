@@ -1,6 +1,6 @@
 package pers.chen.game.entity
 
-import pers.chen.game.KeyHandler
+import pers.chen.game.KeyRecord
 import pers.chen.util.getImage
 
 /**
@@ -19,7 +19,7 @@ object HeroFly : GameObj() {
     }
 
     override fun update(nano: Long) {
-        if (KeyHandler.left) {
+        if (KeyRecord.left) {
             direct = Math.PI
         }
     }
