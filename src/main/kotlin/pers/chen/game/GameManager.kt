@@ -42,7 +42,6 @@ object GameManager {
     fun run(nano: Long) {
         graphics.fill = Color.web("#000000")
         graphics.fillRect(0.0, 0.0, GAME_WIDHT, GAME_HEIGHT)
-        println("当前游戏对象:${gameObjList.size}")
         gameObjList.forEach {
             it.move()
             it.update(nano)
