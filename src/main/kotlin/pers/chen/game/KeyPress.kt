@@ -37,4 +37,5 @@ object KeyPress {
             if (up && field) up = !up
             HeroFly.updateDirect()
         }
+    var fire = false
 }

@@ -21,6 +21,7 @@ object GameView : BaseView() {
         KeyCode.D -> KeyPress.right = true
         KeyCode.W -> KeyPress.up = true
         KeyCode.S -> KeyPress.down = true
+        KeyCode.J -> KeyPress.fire = true
         else -> {
         }
     }
@@ -30,6 +31,7 @@ object GameView : BaseView() {
         KeyCode.D -> KeyPress.right = false
         KeyCode.W -> KeyPress.up = false
         KeyCode.S -> KeyPress.down = false
+        KeyCode.J -> KeyPress.fire = false
         else -> {
         }
     }

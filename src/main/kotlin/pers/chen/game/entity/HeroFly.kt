@@ -1,10 +1,7 @@
 package pers.chen.game.entity
 
 import javafx.scene.canvas.GraphicsContext
-import javafx.scene.input.KeyCode
-import javafx.scene.input.KeyEvent
 import pers.chen.game.KeyPress
-import pers.chen.game.enums.MoveState
 import pers.chen.util.getImage
 
 /**
@@ -13,12 +10,12 @@ import pers.chen.util.getImage
  * @VERSION 1.0
  *
  */
-object HeroFly : GameObj() {
+object HeroFly : PlaneObj() {
     init {
-        width = 50.0
-        height = 58.0
-        centerX = 250.0
-        centerY = 250.0
+        posInfo.width = 50.0
+        posInfo.height = 58.0
+        posInfo.centerX = 250.0
+        posInfo.centerY = 250.0
         image = getImage("./images/hero.png")
     }
 
@@ -26,18 +23,23 @@ object HeroFly : GameObj() {
      * 按键更新，当方向键变更时触发
      */
     fun updateDirect() {
-        if (KeyPress.up) direct = 0.0
-        if (KeyPress.down) direct = Math.PI
-        if (KeyPress.left) direct = Math.PI / 2 + Math.PI
-        if (KeyPress.right) direct = Math.PI / 2
-        if (KeyPress.up && KeyPress.left) direct = Math.PI * 2 - Math.PI / 4
-        if (KeyPress.up && KeyPress.right) direct = Math.PI / 4
-        if (KeyPress.down && KeyPress.left) direct = Math.PI + Math.PI / 4
-        if (KeyPress.down && KeyPress.right) direct = Math.PI - Math.PI / 4
+        if (KeyPress.up) posInfo.direct = 0.0
+        if (KeyPress.down) posInfo.direct = Math.PI
+        if (KeyPress.left) posInfo.direct = Math.PI / 2 + Math.PI
+        if (KeyPress.right) posInfo.direct = Math.PI / 2
+        if (KeyPress.up && KeyPress.left) posInfo.direct = Math.PI * 2 - Math.PI / 4
+        if (KeyPress.up && KeyPress.right) posInfo.direct = Math.PI / 4
+        if (KeyPress.down && KeyPress.left) posInfo.direct = Math.PI + Math.PI / 4
+        if (KeyPress.down && KeyPress.right) posInfo.direct = Math.PI - Math.PI / 4
     }
 
+    override fun fire() {
+        TODO("Not yet implemented")
+    }
+
+
     override fun draw(graphics: GraphicsContext) {
-        graphics.drawImage(image, posX, posY, width, height)
+        graphics.drawImage(image, posInfo.posX, posInfo.posY, posInfo.width, posInfo.height)
     }
 
     override fun update(nano: Long) {
@@ -50,5 +52,6 @@ object HeroFly : GameObj() {
             speed += (180 - speed) / 10
             speed = if (speed >= 170.0) 180.0 else speed
         }
+        println(nano)
     }
 }
