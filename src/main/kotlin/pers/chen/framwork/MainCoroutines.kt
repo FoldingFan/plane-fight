@@ -1,16 +1,15 @@
-package pers.chen.game
+package pers.chen.framwork
 
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import pers.chen.framwork.ViewManager
 
 /**
  * @Author: chen
  * @Date: 2020/3/11 19:21
  * @VERSION 1.0
- *  游戏主线程
+ *  主协程
  */
-object GameCoroutines {
+object MainCoroutines {
     private var elapsedNano: Long = 0
     private var preNano: Long? = null
     var fps: Long = 0

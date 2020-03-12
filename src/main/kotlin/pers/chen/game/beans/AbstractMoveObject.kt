@@ -1,6 +1,6 @@
 package pers.chen.game.beans
 
-import pers.chen.game.GameCoroutines
+import pers.chen.framwork.MainCoroutines
 import kotlin.math.cos
 import kotlin.math.sin
 
@@ -17,7 +17,7 @@ abstract class AbstractMoveObject {
     var speed: Double = 0.0
         set(value) {
             field = value
-            speedFrame = if (value != 0.0) value / GameCoroutines.fps else 0.0
+            speedFrame = if (value != 0.0) value / MainCoroutines.fps else 0.0
         }
 
     /*每帧移动距离*/

@@ -1,6 +1,6 @@
 package pers.chen.game.beans
 
-import pers.chen.game.GameCoroutines
+import pers.chen.framwork.MainCoroutines
 
 /**
  * @Author: chen
@@ -13,7 +13,7 @@ abstract class AbstractPlaneObject : AbstractGameObject() {
     var bullet = 0.0
         set(value) {
             field = value
-            bulletFrame = GameCoroutines.fps / value
+            bulletFrame = MainCoroutines.fps / value
         }
 
     /*多少帧一发子弹*/

@@ -2,7 +2,7 @@ package pers.chen
 
 import javafx.application.Application
 import javafx.stage.Stage
-import pers.chen.game.GameCoroutines
+import pers.chen.framwork.MainCoroutines
 import pers.chen.framwork.ViewManager
 import pers.chen.view.GameView
 import pers.chen.view.HomeView
@@ -18,7 +18,7 @@ class App : Application() {
         ViewManager.regView("home", HomeView)
         ViewManager.regView("game", GameView)
         ViewManager.goView("home")
-        GameCoroutines.play()
+        MainCoroutines.play()
         ViewManager.viewRoot.setOnKeyPressed { ViewManager.currView?.onKeyPress(it) }
         ViewManager.viewRoot.setOnKeyReleased { ViewManager.currView?.onKeyRelease(it) }
     }

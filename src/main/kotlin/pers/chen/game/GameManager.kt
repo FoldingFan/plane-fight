@@ -13,7 +13,7 @@ import pers.chen.game.beans.HeroFly
  * @VERSION 1.0
  *
  */
-object GameMain {
+object GameManager {
     private val gameObjList = HashSet<AbstractGameObject>()
 
     /*游戏画板*/
@@ -22,6 +22,15 @@ object GameMain {
 
     init {
         gameObjList.add(HeroFly)
+    }
+
+
+    fun addObj(obj: AbstractGameObject) {
+        gameObjList.add(obj)
+    }
+
+    fun removeObj(obj: AbstractGameObject) {
+        gameObjList.remove(obj)
     }
 
     /**

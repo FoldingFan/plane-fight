@@ -2,7 +2,7 @@ package pers.chen.view
 
 import javafx.scene.input.KeyCode
 import javafx.scene.input.KeyEvent
-import pers.chen.game.GameMain
+import pers.chen.game.GameManager
 import pers.chen.game.KeyPress
 
 /**
@@ -13,7 +13,7 @@ import pers.chen.game.KeyPress
  */
 object GameView : BaseView() {
     init {
-        pane.children.add(GameMain.canvas)
+        pane.children.add(GameManager.canvas)
     }
 
     override fun onKeyPress(it: KeyEvent) = when (it.code) {
@@ -38,7 +38,7 @@ object GameView : BaseView() {
 
     override fun onUpdate(nanos: Long) {
         /*运行游戏主逻辑*/
-        GameMain.run(nanos)
+        GameManager.run(nanos)
     }
 
 }

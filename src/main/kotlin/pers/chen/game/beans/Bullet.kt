@@ -29,7 +29,6 @@ class Bullet : AbstractGameObject() {
             val bullet = Bullet()
             bullet.posInfo.centerX = posInfo.centerX
             bullet.posInfo.centerY = posInfo.centerY
-
         }
     }
 
