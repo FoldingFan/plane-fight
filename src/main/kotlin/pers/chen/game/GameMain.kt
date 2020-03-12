@@ -3,8 +3,9 @@ package pers.chen.game
 import javafx.scene.canvas.Canvas
 import javafx.scene.canvas.GraphicsContext
 import javafx.scene.paint.Color
-import pers.chen.game.entity.GameObj
-import pers.chen.game.entity.HeroFly
+import pers.chen.game.beans.AbstractGameObject
+import pers.chen.game.beans.AbstractMoveObject
+import pers.chen.game.beans.HeroFly
 
 /**
  * @Author: chen
@@ -13,7 +14,7 @@ import pers.chen.game.entity.HeroFly
  *
  */
 object GameMain {
-    private val gameObjList = HashSet<GameObj>()
+    private val gameObjList = HashSet<AbstractGameObject>()
 
     /*游戏画板*/
     val canvas = Canvas(500.0, 500.0)
@@ -31,8 +32,8 @@ object GameMain {
         graphics.fillRect(0.0, 0.0, 500.0, 500.0)
         gameObjList.forEach {
             it.update(nano)
-            it.move()
             it.draw(graphics)
+            if (it is AbstractMoveObject) it.move()
         }
     }
 

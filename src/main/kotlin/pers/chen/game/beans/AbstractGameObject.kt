@@ -1,10 +1,7 @@
-package pers.chen.game.entity
+package pers.chen.game.beans
 
 import javafx.scene.canvas.GraphicsContext
 import javafx.scene.image.Image
-import pers.chen.game.GameCoroutines
-import kotlin.math.cos
-import kotlin.math.sin
 
 /**
  * @Author: chen
@@ -12,11 +9,13 @@ import kotlin.math.sin
  * @VERSION 1.0
  * 游戏对象
  */
-abstract class GameObj {
-    val posInfo = PosInfo()
+abstract class AbstractGameObject : AbstractMoveObject() {
 
     /*游戏所用图片*/
     var image: Image? = null
+
     abstract fun draw(g: GraphicsContext)
     abstract fun update(nano: Long)
+
+
 }

@@ -1,10 +1,10 @@
-package pers.chen.game.entity
+package pers.chen.game.beans
 
 /**
  * @Author: chen
  * @Date: 2020/3/12 10:35
  * @VERSION 1.0
- * 物体信息
+ * 物体位置方向信息
  */
 class PosInfo {
     /*宽高，设置宽高会导致中心点变化*/

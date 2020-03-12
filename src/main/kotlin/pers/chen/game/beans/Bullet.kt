@@ -1,4 +1,4 @@
-package pers.chen.game.entity
+package pers.chen.game.beans
 
 import javafx.scene.canvas.GraphicsContext
 import pers.chen.util.getImage
@@ -9,7 +9,7 @@ import pers.chen.util.getImage
  * @VERSION 1.0
  *
  */
-class Bullet : MoveObj() {
+class Bullet : AbstractGameObject() {
     init {
         posInfo.width = 5.0
         posInfo.height = 5.0
@@ -24,4 +24,15 @@ class Bullet : MoveObj() {
 
     }
 
+    companion object {
+        fun createBullet(posInfo: PosInfo) {
+            val bullet = Bullet()
+            bullet.posInfo.centerX = posInfo.centerX
+            bullet.posInfo.centerY = posInfo.centerY
+
+        }
+    }
+
 }
+
+

@@ -1,4 +1,4 @@
-package pers.chen.game.entity
+package pers.chen.game.beans
 
 import pers.chen.game.GameCoroutines
 import kotlin.math.cos
@@ -10,7 +10,9 @@ import kotlin.math.sin
  * @VERSION 1.0
  * 可移动物体
  */
-abstract class MoveObj : GameObj() {
+abstract class AbstractMoveObject {
+    val posInfo = PosInfo()
+
     /*每秒移动距离*/
     var speed: Double = 0.0
         set(value) {

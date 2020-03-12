@@ -1,4 +1,4 @@
-package pers.chen.game.entity
+package pers.chen.game.beans
 
 import javafx.scene.canvas.GraphicsContext
 import pers.chen.game.KeyPress
@@ -8,9 +8,9 @@ import pers.chen.util.getImage
  * @Author: chen
  * @Date: 2020/3/11 21:04
  * @VERSION 1.0
- *
+ * 英雄飞机
  */
-object HeroFly : PlaneObj() {
+object HeroFly : AbstractPlaneObject() {
     init {
         posInfo.width = 50.0
         posInfo.height = 58.0
@@ -34,7 +34,7 @@ object HeroFly : PlaneObj() {
     }
 
     override fun fire() {
-        TODO("Not yet implemented")
+        Bullet.createBullet(posInfo)
     }
 
 
@@ -43,6 +43,7 @@ object HeroFly : PlaneObj() {
     }
 
     override fun update(nano: Long) {
+        super.isFire()
         if (!KeyPress.right && !KeyPress.left && !KeyPress.up && !KeyPress.down) {
             if (speed > 0.0) {
                 speed -= speed / 10

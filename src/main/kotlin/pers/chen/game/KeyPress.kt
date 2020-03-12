@@ -1,6 +1,6 @@
 package pers.chen.game
 
-import pers.chen.game.entity.HeroFly
+import pers.chen.game.beans.HeroFly
 
 /**
  * @Author: chen

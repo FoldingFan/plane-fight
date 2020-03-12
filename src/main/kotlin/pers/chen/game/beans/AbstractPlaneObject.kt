@@ -1,4 +1,4 @@
-package pers.chen.game.entity
+package pers.chen.game.beans
 
 import pers.chen.game.GameCoroutines
 
@@ -8,7 +8,7 @@ import pers.chen.game.GameCoroutines
  * @VERSION 1.0
  *
  */
-abstract class PlaneObj : MoveObj() {
+abstract class AbstractPlaneObject : AbstractGameObject() {
     /*一秒发射多少子弹*/
     var bullet = 0.0
         set(value) {
@@ -18,5 +18,16 @@ abstract class PlaneObj : MoveObj() {
 
     /*多少帧一发子弹*/
     private var bulletFrame = 0.0
+
+    private var frame = 0
+    fun isFire() {
+        frame += 1
+        if (frame >= bulletFrame) {
+            frame = 0
+            fire()
+        }
+    }
+
+    /*开火一次*/
     abstract fun fire()
 }
