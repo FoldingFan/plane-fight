@@ -16,6 +16,7 @@ object HeroFly : AbstractPlaneObject() {
         posInfo.height = 58.0
         posInfo.centerX = 250.0
         posInfo.centerY = 250.0
+        bulletOnSec = 10.0
         image = getImage("./images/hero.png")
     }
 
@@ -55,6 +56,5 @@ object HeroFly : AbstractPlaneObject() {
             speed += (180 - speed) / 10
             speed = if (speed >= 170.0) 180.0 else speed
         }
-        println(nano)
     }
 }
