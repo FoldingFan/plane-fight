@@ -14,7 +14,7 @@ class Bullet : AbstractGameObject() {
     init {
         posInfo.width = 5.0
         posInfo.height = 11.0
-        speed = 60.0
+        speed = 360.0
     }
 
     override fun draw(g: GraphicsContext) {
