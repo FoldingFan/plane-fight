@@ -11,7 +11,7 @@ import pers.chen.game.beans.HeroFly
  * @Author: chen
  * @Date: 2020/3/11 20:57
  * @VERSION 1.0
- *
+ * 游戏管理
  */
 object GameManager {
     private val gameObjList = HashSet<AbstractGameObject>()

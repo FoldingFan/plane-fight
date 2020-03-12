@@ -13,7 +13,7 @@ class Bullet : AbstractGameObject() {
     init {
         posInfo.width = 5.0
         posInfo.height = 5.0
-        image = getImage("./images/bullet_hero.png")
+
     }
 
     override fun draw(g: GraphicsContext) {
@@ -25,7 +25,15 @@ class Bullet : AbstractGameObject() {
     }
 
     companion object {
-        fun createBullet(posInfo: PosInfo) {
+        private val heroBullet = getImage("./images/bullet_hero.png")
+        private val enemyBullet = getImage("./images/bullet_hero.png")
+
+        /**
+         * 创建一个子弹
+         * flag true 英雄子弹
+         * flag false 敌人子弹
+         */
+        fun createBullet(posInfo: PosInfo, flag: Boolean) {
             val bullet = Bullet()
             bullet.posInfo.centerX = posInfo.centerX
             bullet.posInfo.centerY = posInfo.centerY
