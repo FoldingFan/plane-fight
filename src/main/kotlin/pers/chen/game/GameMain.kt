@@ -33,7 +33,7 @@ object GameMain {
         gameObjList.forEach {
             it.update(nano)
             it.draw(graphics)
-            if (it is AbstractMoveObject) it.move()
+            it.move()
         }
     }
 
