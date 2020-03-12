@@ -1,6 +1,8 @@
 package pers.chen.game.beans
 
 import javafx.scene.canvas.GraphicsContext
+import pers.chen.framwork.GAME_HEIGHT
+import pers.chen.framwork.GAME_WIDHT
 import pers.chen.game.KeyPress
 import pers.chen.util.getImage
 
@@ -58,5 +60,10 @@ object HeroFly : AbstractPlaneObject() {
             speed += (180 - speed) / 10
             speed = if (speed >= 170.0) 180.0 else speed
         }
+        posInfo.posX = if (posInfo.posX <= 0) 0.0 else posInfo.posX
+        posInfo.posY = if (posInfo.posY <= 0) 0.0 else posInfo.posY
+
+        posInfo.posX = if (posInfo.posX >= GAME_WIDHT - posInfo.width) GAME_WIDHT - posInfo.width else posInfo.posX
+        posInfo.posY = if (posInfo.posY >= GAME_HEIGHT - posInfo.height) GAME_HEIGHT - posInfo.height else posInfo.posY
     }
 }
