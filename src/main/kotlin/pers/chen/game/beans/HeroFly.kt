@@ -1,6 +1,7 @@
 package pers.chen.game.beans
 
 import javafx.scene.canvas.GraphicsContext
+import pers.chen.audio.FireAudio
 import pers.chen.framwork.GAME_HEIGHT
 import pers.chen.framwork.GAME_WIDHT
 import pers.chen.game.KeyPress
@@ -40,6 +41,7 @@ object HeroFly : AbstractPlaneObject() {
 
     override fun fire() {
         Bullet.createBullet(posInfo.centerX + (Math.random() * fireRange - fireRange / 2), posInfo.centerY, true)
+        FireAudio.play()
     }
 
 
