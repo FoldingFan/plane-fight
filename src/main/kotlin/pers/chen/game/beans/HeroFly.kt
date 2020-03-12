@@ -34,7 +34,7 @@ object HeroFly : AbstractPlaneObject() {
     }
 
     override fun fire() {
-        Bullet.createBullet(posInfo)
+        Bullet.createBullet(posInfo, true)
     }
 
 

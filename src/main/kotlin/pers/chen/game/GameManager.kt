@@ -4,8 +4,8 @@ import javafx.scene.canvas.Canvas
 import javafx.scene.canvas.GraphicsContext
 import javafx.scene.paint.Color
 import pers.chen.game.beans.AbstractGameObject
-import pers.chen.game.beans.AbstractMoveObject
 import pers.chen.game.beans.HeroFly
+import java.util.concurrent.CopyOnWriteArraySet
 
 /**
  * @Author: chen
@@ -14,7 +14,8 @@ import pers.chen.game.beans.HeroFly
  * 游戏管理
  */
 object GameManager {
-    private val gameObjList = HashSet<AbstractGameObject>()
+    /*线程安全的set*/
+    private val gameObjList = CopyOnWriteArraySet<AbstractGameObject>()
 
     /*游戏画板*/
     val canvas = Canvas(500.0, 500.0)
