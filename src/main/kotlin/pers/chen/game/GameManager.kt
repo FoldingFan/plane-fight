@@ -3,6 +3,8 @@ package pers.chen.game
 import javafx.scene.canvas.Canvas
 import javafx.scene.canvas.GraphicsContext
 import javafx.scene.paint.Color
+import pers.chen.framwork.GAME_HEIGHT
+import pers.chen.framwork.GAME_WIDHT
 import pers.chen.game.beans.AbstractGameObject
 import pers.chen.game.beans.HeroFly
 import java.util.concurrent.CopyOnWriteArraySet
@@ -18,7 +20,7 @@ object GameManager {
     private val gameObjList = CopyOnWriteArraySet<AbstractGameObject>()
 
     /*游戏画板*/
-    val canvas = Canvas(500.0, 500.0)
+    val canvas = Canvas(GAME_WIDHT, GAME_HEIGHT)
     private val graphics: GraphicsContext = canvas.graphicsContext2D
 
     init {
@@ -39,11 +41,12 @@ object GameManager {
      */
     fun run(nano: Long) {
         graphics.fill = Color.web("#000000")
-        graphics.fillRect(0.0, 0.0, 500.0, 500.0)
+        graphics.fillRect(0.0, 0.0, GAME_WIDHT, GAME_HEIGHT)
+        println("当前游戏对象:${gameObjList.size}")
         gameObjList.forEach {
+            it.move()
             it.update(nano)
             it.draw(graphics)
-            it.move()
         }
     }
 

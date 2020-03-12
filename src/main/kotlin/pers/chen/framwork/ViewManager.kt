@@ -10,9 +10,13 @@ import pers.chen.view.BaseView
  * @VERSION 1.0
  *
  */
+
+const val GAME_WIDHT = 500.0
+const val GAME_HEIGHT = 500.0
+
 object ViewManager {
     /*根节点*/
-    val viewRoot = Scene(Pane(), 500.0, 500.0)
+    val viewRoot = Scene(Pane(), GAME_WIDHT, GAME_HEIGHT)
 
     /*当前视图*/
     var currView: BaseView? = null

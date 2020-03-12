@@ -11,12 +11,14 @@ import pers.chen.util.getImage
  * 英雄飞机
  */
 object HeroFly : AbstractPlaneObject() {
+    private const val fireRange = 10
+
     init {
         posInfo.width = 50.0
         posInfo.height = 58.0
         posInfo.centerX = 250.0
         posInfo.centerY = 250.0
-        bulletOnSec = 10.0
+        bulletOnSec = 15.0
         image = getImage("./images/hero.png")
     }
 
@@ -35,7 +37,7 @@ object HeroFly : AbstractPlaneObject() {
     }
 
     override fun fire() {
-        Bullet.createBullet(posInfo, true)
+        Bullet.createBullet(posInfo.centerX + (Math.random() * fireRange - fireRange / 2), posInfo.centerY, true)
     }
 
 

@@ -1,6 +1,7 @@
 package pers.chen.game.beans
 
 import javafx.scene.canvas.GraphicsContext
+import pers.chen.framwork.GAME_WIDHT
 import pers.chen.game.GameManager
 import pers.chen.util.getImage
 
@@ -22,7 +23,10 @@ class Bullet : AbstractGameObject() {
     }
 
     override fun update(nano: Long) {
-
+        if (posInfo.centerX <= -100 || posInfo.centerX >= GAME_WIDHT + 100
+                || posInfo.centerY <= -100 || posInfo.centerY >= GAME_WIDHT + 100) {
+            GameManager.removeObj(this)
+        }
     }
 
     companion object {
@@ -35,9 +39,13 @@ class Bullet : AbstractGameObject() {
          * flag false 敌人子弹
          */
         fun createBullet(posInfo: PosInfo, flag: Boolean) {
+            createBullet(posInfo.centerX, posInfo.centerY, flag)
+        }
+
+        fun createBullet(x: Double, y: Double, flag: Boolean) {
             val bullet = Bullet()
-            bullet.posInfo.centerX = posInfo.centerX
-            bullet.posInfo.centerY = posInfo.centerY
+            bullet.posInfo.centerX = x
+            bullet.posInfo.centerY = y
 
             bullet.image = if (flag) heroBulletImage else enemyBulletImage
 
