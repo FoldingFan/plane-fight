@@ -43,7 +43,9 @@ object HeroFly : AbstractPlaneObject() {
     }
 
     override fun update(nano: Long) {
-        super.isFire()
+        /*开火*/
+        if (KeyPress.fire) super.isFire()
+        /*方向*/
         if (!KeyPress.right && !KeyPress.left && !KeyPress.up && !KeyPress.down) {
             if (speed > 0.0) {
                 speed -= speed / 10
