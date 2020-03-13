@@ -1,6 +1,6 @@
 package pers.chen.game
 
-import pers.chen.game.beans.HeroFly
+import pers.chen.game.beans.HeroPlane
 
 /**
  * @Author: chen
@@ -14,28 +14,28 @@ object KeyPress {
             if (field == value) return
             field = value
             if (right && field) right = !right
-            HeroFly.updateDirect()
+            HeroPlane.updateDirect()
         }
     var right = false
         set(value) {
             if (field == value) return
             field = value
             if (left && field) left = !left
-            HeroFly.updateDirect()
+            HeroPlane.updateDirect()
         }
     var up = false
         set(value) {
             if (field == value) return
             field = value
             if (down && field) down = !down
-            HeroFly.updateDirect()
+            HeroPlane.updateDirect()
         }
     var down = false
         set(value) {
             if (field == value) return
             field = value
             if (up && field) up = !up
-            HeroFly.updateDirect()
+            HeroPlane.updateDirect()
         }
     var fire = false
 }

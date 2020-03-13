@@ -13,7 +13,7 @@ import pers.chen.util.getImage
  * @VERSION 1.0
  * 英雄飞机
  */
-object HeroFly : AbstractPlaneObject() {
+object HeroPlane : AbstractPlaneObject() {
     private const val fireRange = 10
 
     init {

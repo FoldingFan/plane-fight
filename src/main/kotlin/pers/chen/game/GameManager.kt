@@ -7,7 +7,7 @@ import pers.chen.framwork.GAME_HEIGHT
 import pers.chen.framwork.GAME_WIDHT
 import pers.chen.framwork.MainCoroutines
 import pers.chen.game.beans.AbstractGameObject
-import pers.chen.game.beans.HeroFly
+import pers.chen.game.beans.HeroPlane
 
 /**
  * @Author: chen
@@ -31,7 +31,7 @@ object GameManager {
     private val graphics: GraphicsContext = canvas.graphicsContext2D
 
     init {
-        gameObjList.add(HeroFly)
+        gameObjList.add(HeroPlane)
     }
 
 
