@@ -36,8 +36,8 @@ class Enemy1 : AbstractPlaneObject() {
         FireAudio.play()
     }
 
-    override fun update(nano: Long) {
-        isFire()
+    override fun update(useNano: Long) {
+        isFire(useNano)
         posInfo.direct = getDirect(posInfo, HeroPlane.posInfo)
     }
 }

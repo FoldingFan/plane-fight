@@ -1,6 +1,6 @@
 package pers.chen.game.beans
 
-import pers.chen.framwork.MainCoroutines
+import pers.chen.framwork.MainThread
 import kotlin.math.cos
 import kotlin.math.sin
 
@@ -15,17 +15,11 @@ abstract class AbstractMoveObject {
 
     /*每秒移动距离*/
     var speed: Double = 0.0
-        set(value) {
-            field = value
-            speedFrame = if (value != 0.0) value / MainCoroutines.fps else 0.0
-        }
 
-    /*每帧移动距离*/
-    private var speedFrame = 0.0
 
     /*状态*/
-    fun move() {
-        posInfo.centerX += sin(posInfo.direct) * speedFrame
-        posInfo.centerY -= cos(posInfo.direct) * speedFrame
+    fun move(useNano: Long) {
+        posInfo.centerX += sin(posInfo.direct) * speed * useNano / 1E9
+        posInfo.centerY -= cos(posInfo.direct) * speed * useNano / 1E9
     }
 }

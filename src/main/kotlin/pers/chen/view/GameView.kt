@@ -36,9 +36,9 @@ object GameView : BaseView() {
         }
     }
 
-    override fun onUpdate(nanos: Long) {
+    override fun onUpdate(useNano: Long) {
         /*运行游戏主逻辑*/
-        GameManager.run(nanos)
+        GameManager.run(useNano)
     }
 
 }

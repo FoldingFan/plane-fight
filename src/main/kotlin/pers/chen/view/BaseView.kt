@@ -28,7 +28,7 @@ abstract class BaseView {
     /**
      * 视图更新
      */
-    open fun onUpdate(nanos: Long) {}
+    open fun onUpdate(useNano: Long) {}
 
     /**
      * 离开时调用

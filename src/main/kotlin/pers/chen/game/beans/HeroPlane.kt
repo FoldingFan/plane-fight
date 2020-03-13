@@ -1,6 +1,5 @@
 package pers.chen.game.beans
 
-import javafx.scene.canvas.GraphicsContext
 import pers.chen.audio.FireAudio
 import pers.chen.framwork.GAME_HEIGHT
 import pers.chen.framwork.GAME_WIDHT
@@ -44,9 +43,9 @@ object HeroPlane : AbstractPlaneObject() {
         FireAudio.play()
     }
 
-    override fun update(nano: Long) {
+    override fun update(useNano: Long) {
         /*开火*/
-        if (KeyPress.fire) super.isFire()
+        if (KeyPress.fire) super.isFire(useNano)
         /*方向*/
         if (!KeyPress.right && !KeyPress.left && !KeyPress.up && !KeyPress.down) {
             if (speed > 0.0) {

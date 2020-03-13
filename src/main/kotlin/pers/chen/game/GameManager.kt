@@ -5,7 +5,7 @@ import javafx.scene.canvas.GraphicsContext
 import javafx.scene.paint.Color
 import pers.chen.framwork.GAME_HEIGHT
 import pers.chen.framwork.GAME_WIDHT
-import pers.chen.framwork.MainCoroutines
+import pers.chen.framwork.MainThread
 import pers.chen.game.beans.AbstractGameObject
 import pers.chen.game.beans.HeroPlane
 import pers.chen.game.beans.enemy.Enemy1
@@ -51,15 +51,16 @@ object GameManager {
     /**
      * 每帧调用
      */
-    fun run(nano: Long) {
-        graphics.fill = Color.BLACK
+    fun run(useNano: Long) {
+        graphics.fill =
+                Color.BLACK
         graphics.fillRect(0.0, 0.0, GAME_WIDHT, GAME_HEIGHT)
         graphics.fill = Color.WHITE
-        graphics.fillText("FPS:${MainCoroutines.realFps}", 10.0, 20.0)
+        graphics.fillText("FPS:${MainThread.realFps}", 10.0, 20.0)
         createEnemy()
         gameObjList.forEach {
-            it.update(nano)
-            it.move()
+            it.update(useNano)
+            it.move(useNano)
             it.draw(graphics)
         }
         gameObjList.addAll(gameObjListAdd)

@@ -1,6 +1,6 @@
 package pers.chen.game.beans
 
-import pers.chen.framwork.MainCoroutines
+import pers.chen.framwork.MainThread
 
 /**
  * @Author: chen
@@ -11,19 +11,13 @@ import pers.chen.framwork.MainCoroutines
 abstract class AbstractPlaneObject : AbstractGameObject() {
     /*一秒发射多少子弹*/
     var bulletOnSec = 0.0
-        set(value) {
-            field = value
-            bulletFrame = value / MainCoroutines.fps
-        }
 
-    /*一帧多少发子弹*/
-    private var bulletFrame = 0.0
-
-    private var frame = 0.0
-    fun isFire() {
-        frame += bulletFrame
-        if (frame >= 1) {
-            frame -= 1
+    /*累计间隔*/
+    private var ex = 0.0
+    fun isFire(useNanos: Long) {
+        ex += useNanos
+        if (ex >= 1E9 / bulletOnSec) {
+            ex -= 1E9 / bulletOnSec
             fire()
         }
     }
