@@ -14,7 +14,7 @@ import pers.chen.util.getImage
 class Bullet : AbstractGameObject() {
     init {
         posInfo.width = 5.0
-        posInfo.height = 11.0
+        posInfo.height = 20.0
         speed = 360.0
     }
 
