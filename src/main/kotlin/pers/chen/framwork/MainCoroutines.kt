@@ -47,7 +47,6 @@ object MainCoroutines {
     /*游戏线程开始*/
     fun play() {
         GlobalScope.launch {
-            println(Thread.currentThread().name)
             while (true) {
                 val currNano = System.nanoTime()
                 preNano = preNano ?: currNano

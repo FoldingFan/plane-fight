@@ -8,6 +8,7 @@ import pers.chen.framwork.GAME_WIDHT
 import pers.chen.framwork.MainCoroutines
 import pers.chen.game.beans.AbstractGameObject
 import pers.chen.game.beans.HeroPlane
+import pers.chen.game.beans.enemy.Enemy1
 
 /**
  * @Author: chen
@@ -25,10 +26,14 @@ object GameManager {
     /*待添加游戏对象*/
     private val gameObjListAdd = hashSetOf<AbstractGameObject>()
 
+    /*敌机数量*/
+    private var enemyCount = 0
 
     /*游戏画板*/
     val canvas = Canvas(GAME_WIDHT, GAME_HEIGHT)
     private val graphics: GraphicsContext = canvas.graphicsContext2D
+
+    private const val totalEnemyCount = 5
 
     init {
         gameObjList.add(HeroPlane)
@@ -51,6 +56,7 @@ object GameManager {
         graphics.fillRect(0.0, 0.0, GAME_WIDHT, GAME_HEIGHT)
         graphics.fill = Color.WHITE
         graphics.fillText("FPS:${MainCoroutines.realFps}", 10.0, 20.0)
+        createEnemy()
         gameObjList.forEach {
             it.update(nano)
             it.move()
@@ -60,5 +66,13 @@ object GameManager {
         gameObjList.removeAll(gameObjListRemove)
     }
 
+
+    /*创建敌机*/
+    private fun createEnemy() {
+        if (enemyCount < totalEnemyCount) {
+            addObj(Enemy1())
+            enemyCount++
+        }
+    }
 
 }

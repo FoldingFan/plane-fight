@@ -18,9 +18,6 @@ class Bullet : AbstractGameObject() {
         speed = 360.0
     }
 
-    override fun draw(g: GraphicsContext) {
-        g.drawImage(image, posInfo.posX, posInfo.posY, posInfo.width, posInfo.height)
-    }
 
     override fun update(nano: Long) {
         if (posInfo.centerX <= -100 || posInfo.centerX >= GAME_WIDHT + 100
@@ -43,9 +40,14 @@ class Bullet : AbstractGameObject() {
         }
 
         fun createBullet(x: Double, y: Double, flag: Boolean) {
+            createBullet(x, y, 0.0, flag)
+        }
+
+        fun createBullet(x: Double, y: Double, direct: Double, flag: Boolean) {
             val bullet = Bullet()
             bullet.posInfo.centerX = x
             bullet.posInfo.centerY = y
+            bullet.posInfo.direct = direct
 
             bullet.image = if (flag) heroBulletImage else enemyBulletImage
 

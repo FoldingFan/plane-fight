@@ -44,11 +44,6 @@ object HeroPlane : AbstractPlaneObject() {
         FireAudio.play()
     }
 
-
-    override fun draw(graphics: GraphicsContext) {
-        graphics.drawImage(image, posInfo.posX, posInfo.posY, posInfo.width, posInfo.height)
-    }
-
     override fun update(nano: Long) {
         /*开火*/
         if (KeyPress.fire) super.isFire()
