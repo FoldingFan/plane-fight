@@ -20,8 +20,8 @@ object MainThread : AnimationTimer() {
         fpsArray.add(useNano)
         if (fpsArray.size == 60) {
             val nanoFrame = fpsArray.average()
-            println("$useNano : ${nanoFrame.toLong()}")
             fpsArray.clear()
+            realFps = (1E9 / nanoFrame).roundToInt()
         }
     }
 

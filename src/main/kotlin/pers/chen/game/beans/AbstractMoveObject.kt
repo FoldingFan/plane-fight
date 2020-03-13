@@ -15,11 +15,16 @@ abstract class AbstractMoveObject {
 
     /*每秒移动距离*/
     var speed: Double = 0.0
+        set(value) {
+            field = value
+            moveNanos = value / 1E9
+        }
 
 
-    /*状态*/
+    /*每纳秒移动距离*/
+    private var moveNanos = 0.0
     fun move(useNano: Long) {
-        posInfo.centerX += sin(posInfo.direct) * speed * useNano / 1E9
-        posInfo.centerY -= cos(posInfo.direct) * speed * useNano / 1E9
+        posInfo.centerX += sin(posInfo.direct) * moveNanos * useNano
+        posInfo.centerY -= cos(posInfo.direct) * moveNanos * useNano
     }
 }
