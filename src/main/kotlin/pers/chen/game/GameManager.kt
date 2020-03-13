@@ -64,7 +64,9 @@ object GameManager {
             it.draw(graphics)
         }
         gameObjList.addAll(gameObjListAdd)
+        gameObjListAdd.clear()
         gameObjList.removeAll(gameObjListRemove)
+        gameObjListRemove.clear()
     }
 
 
