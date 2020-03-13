@@ -1,6 +1,5 @@
 package pers.chen.game.beans
 
-import javafx.scene.canvas.GraphicsContext
 import pers.chen.framwork.GAME_WIDHT
 import pers.chen.game.GameManager
 import pers.chen.util.getImage

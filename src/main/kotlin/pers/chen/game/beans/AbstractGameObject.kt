@@ -14,12 +14,13 @@ abstract class AbstractGameObject : AbstractMoveObject() {
     /*游戏所用图片*/
     var image: Image? = null
 
-    open fun draw(graphics: GraphicsContext){
+    open fun draw(graphics: GraphicsContext) {
         graphics.save()
         graphics.translate(posInfo.centerX, posInfo.centerY)
         graphics.rotate(180 / Math.PI * posInfo.direct)
         graphics.drawImage(image, -posInfo.width / 2, -posInfo.height / 2, posInfo.width, posInfo.height)
         graphics.restore()
     }
+
     abstract fun update(nano: Long)
 }
