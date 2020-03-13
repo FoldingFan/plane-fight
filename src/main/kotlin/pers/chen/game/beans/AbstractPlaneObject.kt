@@ -11,13 +11,21 @@ import pers.chen.framwork.MainThread
 abstract class AbstractPlaneObject : AbstractGameObject() {
     /*一秒发射多少子弹*/
     var bulletOnSec = 0.0
+        set(value) {
+            field = value
+            fireNanos = 1E9 / field
+        }
+
 
     /*累计间隔*/
     private var ex = 0.0
+
+    /*多少纳米发射一枚子弹*/
+    private var fireNanos = 0.0
     fun isFire(useNanos: Long) {
         ex += useNanos
-        if (ex >= 1E9 / bulletOnSec) {
-            ex -= 1E9 / bulletOnSec
+        if (ex >= fireNanos) {
+            ex -= fireNanos
             fire()
         }
     }
