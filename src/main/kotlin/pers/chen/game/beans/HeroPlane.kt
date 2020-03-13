@@ -16,8 +16,8 @@ object HeroPlane : AbstractPlaneObject() {
     private const val fireRange = 10
 
     init {
-        posInfo.width = 50.0
-        posInfo.height = 58.0
+        posInfo.width = 69.0
+        posInfo.height = 51.0
         posInfo.centerX = 250.0
         posInfo.centerY = 250.0
         bulletOnSec = 15.0
