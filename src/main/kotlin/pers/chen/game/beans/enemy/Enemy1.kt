@@ -38,7 +38,6 @@ class Enemy1 : AbstractPlaneObject() {
 
     override fun update(useNano: Long) {
         isFire(useNano)
-        val s = Math.random() * 0.6 - 0.3
-        posInfo.direct = getDirect(posInfo, HeroPlane.posInfo) + s
+        posInfo.direct = getDirect(posInfo, HeroPlane.posInfo)
     }
 }
