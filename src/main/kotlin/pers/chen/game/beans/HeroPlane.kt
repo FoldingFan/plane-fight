@@ -50,7 +50,7 @@ object HeroPlane : AbstractPlaneObject() {
     override fun collision(gameObject: AbstractGameObject) {
         if (gameObject is AbstractEnemy1 || gameObject is EnemyBullet) {
             this.posInfo.centerX = GAME_WIDHT / 2
-            this.posInfo.centerY = GAME_HEIGHT / 2
+            this.posInfo.centerY = GAME_HEIGHT
             BoomAudio.play()
         }
     }
