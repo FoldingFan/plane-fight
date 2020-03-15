@@ -71,8 +71,8 @@ object GameManager {
             it.move(useNano)
             it.draw(graphics)
             /*显示碰撞体积*/
-            graphics.stroke = Color.GREEN
-            graphics.strokeOval(it.posInfo.centerX - it.hitWidth / 2, it.posInfo.centerY - it.hitWidth / 2, it.hitWidth, it.hitWidth)
+//            graphics.stroke = Color.GREEN
+//            graphics.strokeOval(it.posInfo.centerX - it.hitWidth / 2, it.posInfo.centerY - it.hitWidth / 2, it.hitWidth, it.hitWidth)
         }
         collisionDistance()
         gameObjList.addAll(gameObjListAdd)
