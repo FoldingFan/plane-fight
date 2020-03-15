@@ -4,7 +4,6 @@ import pers.chen.framwork.GAME_WIDHT
 import pers.chen.game.GameManager
 import pers.chen.game.beans.AbstractBullet
 import pers.chen.game.beans.AbstractGameObject
-import pers.chen.game.beans.HeroBullet
 import pers.chen.game.beans.HeroPlane
 
 /**

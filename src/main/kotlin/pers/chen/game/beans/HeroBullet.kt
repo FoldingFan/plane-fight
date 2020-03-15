@@ -3,7 +3,6 @@ package pers.chen.game.beans
 import pers.chen.framwork.GAME_WIDHT
 import pers.chen.game.GameManager
 import pers.chen.game.beans.enemy.AbstractEnemy
-import pers.chen.game.beans.enemy.Enemy
 
 /**
  * @Author: chen

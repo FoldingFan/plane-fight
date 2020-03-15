@@ -1,6 +1,5 @@
 package pers.chen.game.beans
 
-import pers.chen.framwork.MainThread
 import kotlin.math.cos
 import kotlin.math.sin
 
