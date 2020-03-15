@@ -1,14 +1,12 @@
 package pers.chen.game.beans
 
-import pers.chen.framwork.MainThread
-
 /**
  * @Author: chen
  * @Date: 2020/3/12 10:31
  * @VERSION 1.0
  *
  */
-abstract class AbstractPlaneObject : AbstractGameObject() {
+public abstract class AbstractPlaneObject : AbstractGameObject() {
     /*一秒发射多少子弹*/
     var bulletOnSec = 0.0
         set(value) {

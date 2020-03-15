@@ -14,6 +14,12 @@ abstract class AbstractGameObject : AbstractMoveObject() {
     /*游戏所用图片*/
     var image: Image? = null
 
+    /*碰撞体积*/
+    var hitWidth = 0.0
+
+    /*发生碰撞*/
+    abstract fun collision(gameObject: AbstractGameObject)
+
     open fun draw(graphics: GraphicsContext) {
         graphics.save()
         graphics.translate(posInfo.centerX, posInfo.centerY)

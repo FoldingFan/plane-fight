@@ -8,7 +8,10 @@ import pers.chen.framwork.GAME_WIDHT
 import pers.chen.framwork.MainThread
 import pers.chen.game.beans.AbstractGameObject
 import pers.chen.game.beans.HeroPlane
-import pers.chen.game.beans.enemy.Enemy1
+import pers.chen.game.beans.enemy.AbstractEnemy
+import pers.chen.game.beans.enemy.Enemy
+import kotlin.math.abs
+import kotlin.math.sqrt
 
 /**
  * @Author: chen
@@ -18,21 +21,23 @@ import pers.chen.game.beans.enemy.Enemy1
  */
 object GameManager {
     /*游戏对象集合*/
-    private val gameObjList = hashSetOf<AbstractGameObject>()
+    private val gameObjList = arrayListOf<AbstractGameObject>()
 
     /*待删除游戏对象*/
-    private val gameObjListRemove = hashSetOf<AbstractGameObject>()
+    private val gameObjListRemove = arrayListOf<AbstractGameObject>()
 
     /*待添加游戏对象*/
-    private val gameObjListAdd = hashSetOf<AbstractGameObject>()
+    private val gameObjListAdd = arrayListOf<AbstractGameObject>()
 
-    /*敌机数量*/
-    private var enemyCount = 0
 
     /*游戏画板*/
     val canvas = Canvas(GAME_WIDHT, GAME_HEIGHT)
     private val graphics: GraphicsContext = canvas.graphicsContext2D
 
+    /*当前敌机数量*/
+    private var enemyCount = 0
+
+    /*最大敌机数量*/
     private const val totalEnemyCount = 5
 
     init {
@@ -45,7 +50,10 @@ object GameManager {
     }
 
     fun removeObj(obj: AbstractGameObject) {
-        gameObjListRemove.remove(obj)
+        gameObjListRemove.add(obj)
+        if (obj is AbstractEnemy) {
+            enemyCount--
+        }
     }
 
     /**
@@ -62,18 +70,39 @@ object GameManager {
             it.update(useNano)
             it.move(useNano)
             it.draw(graphics)
+            /*显示碰撞体积*/
+            graphics.stroke = Color.GREEN
+            graphics.strokeOval(it.posInfo.centerX - it.hitWidth / 2, it.posInfo.centerY - it.hitWidth / 2, it.hitWidth, it.hitWidth)
         }
+        collisionDistance()
         gameObjList.addAll(gameObjListAdd)
         gameObjListAdd.clear()
         gameObjList.removeAll(gameObjListRemove)
         gameObjListRemove.clear()
     }
 
+    /*碰撞检测*/
+    private fun collisionDistance() {
+        for (i in gameObjList.indices) {
+            val one = gameObjList[i]
+            for (j in i until gameObjList.size) {
+                val two = gameObjList[j]
+                val collisionDistance = one.hitWidth / 2 + two.hitWidth / 2
+                val b1 = abs(one.posInfo.centerX - two.posInfo.centerX)
+                val b2 = abs(one.posInfo.centerY - two.posInfo.centerY)
+                val realDistance = sqrt(b1 * b1 + b2 * b2)
+                if (collisionDistance > realDistance && one != two) {
+                    one.collision(two)
+                    two.collision(one)
+                }
+            }
+        }
+    }
 
     /*创建敌机*/
     private fun createEnemy() {
         if (enemyCount < totalEnemyCount) {
-            addObj(Enemy1())
+            addObj(Enemy())
             enemyCount++
         }
     }

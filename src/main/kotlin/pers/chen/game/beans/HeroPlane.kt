@@ -1,10 +1,13 @@
 package pers.chen.game.beans
 
+import pers.chen.audio.BoomAudio
 import pers.chen.audio.FireAudio
 import pers.chen.framwork.GAME_HEIGHT
 import pers.chen.framwork.GAME_WIDHT
 import pers.chen.game.KeyPress
+import pers.chen.game.beans.enemy.EnemyBullet
 import pers.chen.util.getImage
+import pers.chen.game.beans.enemy.AbstractEnemy as AbstractEnemy1
 
 /**
  * @Author: chen
@@ -18,8 +21,9 @@ object HeroPlane : AbstractPlaneObject() {
     init {
         posInfo.width = 69.0
         posInfo.height = 51.0
-        posInfo.centerX = 250.0
-        posInfo.centerY = 250.0
+        this.posInfo.centerX = GAME_WIDHT / 2
+        this.posInfo.centerY = GAME_HEIGHT / 2
+        hitWidth = 10.0
         bulletOnSec = 15.0
         image = getImage("./images/hero.png")
     }
@@ -39,8 +43,16 @@ object HeroPlane : AbstractPlaneObject() {
     }
 
     override fun fire() {
-        Bullet.createBullet(posInfo.centerX + (Math.random() * fireRange - fireRange / 2), posInfo.centerY, true)
+        createBullet(posInfo.centerX + (Math.random() * fireRange - fireRange / 2), posInfo.centerY, true)
         FireAudio.play()
+    }
+
+    override fun collision(gameObject: AbstractGameObject) {
+        if (gameObject is AbstractEnemy1 || gameObject is EnemyBullet) {
+            this.posInfo.centerX = GAME_WIDHT / 2
+            this.posInfo.centerY = GAME_HEIGHT / 2
+            BoomAudio.play()
+        }
     }
 
     override fun update(useNano: Long) {
